@@ -112,8 +112,6 @@
 		9A7E00CC1952E454000C1D69 /* SEMS_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				9A7E00D51952E454000C1D69 /* SEMSAppDelegate.h */,
-				9A7E00D61952E454000C1D69 /* SEMSAppDelegate.m */,
 				9A7E00D81952E454000C1D69 /* Main.storyboard */,
 				9A7E00DB1952E454000C1D69 /* SEMSViewController.h */,
 				9A7E00DC1952E454000C1D69 /* SEMSViewController.m */,
@@ -126,6 +124,8 @@
 		9A7E00CD1952E454000C1D69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9A7E00D51952E454000C1D69 /* SEMSAppDelegate.h */,
+				9A7E00D61952E454000C1D69 /* SEMSAppDelegate.m */,
 				9A7E00CE1952E454000C1D69 /* SEMS_iOS-Info.plist */,
 				9A7E00CF1952E454000C1D69 /* InfoPlist.strings */,
 				9A7E00D21952E454000C1D69 /* main.m */,
