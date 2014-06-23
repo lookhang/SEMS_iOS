@@ -12,6 +12,9 @@
 		9A15AD4B1953FFBF00A616AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A15AD4A1953FFBF00A616AE /* QuartzCore.framework */; };
 		9A15AD4E1954000100A616AE /* RADataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A15AD4D1954000100A616AE /* RADataObject.m */; };
 		9A15AD511954007A00A616AE /* SEMS_DeviceCtrlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A15AD501954007A00A616AE /* SEMS_DeviceCtrlViewController.m */; };
+		9A7A988C1958138C00A130A8 /* SEMS_NodeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A988B1958138C00A130A8 /* SEMS_NodeObject.m */; };
+		9A7A989219586E9300A130A8 /* SEMS_NodeCellViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A989019586E9300A130A8 /* SEMS_NodeCellViewTableViewCell.m */; };
+		9A7A989319586E9300A130A8 /* SEMS_NodeCellViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A989119586E9300A130A8 /* SEMS_NodeCellViewTableViewCell.xib */; };
 		9A7E00C71952E454000C1D69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7E00C61952E454000C1D69 /* Foundation.framework */; };
 		9A7E00C91952E454000C1D69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7E00C81952E454000C1D69 /* CoreGraphics.framework */; };
 		9A7E00CB1952E454000C1D69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7E00CA1952E454000C1D69 /* UIKit.framework */; };
@@ -46,6 +49,11 @@
 		9A15AD4D1954000100A616AE /* RADataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADataObject.m; sourceTree = "<group>"; };
 		9A15AD4F1954007A00A616AE /* SEMS_DeviceCtrlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEMS_DeviceCtrlViewController.h; sourceTree = "<group>"; };
 		9A15AD501954007A00A616AE /* SEMS_DeviceCtrlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEMS_DeviceCtrlViewController.m; sourceTree = "<group>"; };
+		9A7A988A1958138C00A130A8 /* SEMS_NodeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEMS_NodeObject.h; sourceTree = "<group>"; };
+		9A7A988B1958138C00A130A8 /* SEMS_NodeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEMS_NodeObject.m; sourceTree = "<group>"; };
+		9A7A988F19586E9300A130A8 /* SEMS_NodeCellViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEMS_NodeCellViewTableViewCell.h; sourceTree = "<group>"; };
+		9A7A989019586E9300A130A8 /* SEMS_NodeCellViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEMS_NodeCellViewTableViewCell.m; sourceTree = "<group>"; };
+		9A7A989119586E9300A130A8 /* SEMS_NodeCellViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SEMS_NodeCellViewTableViewCell.xib; sourceTree = "<group>"; };
 		9A7E00C31952E454000C1D69 /* SEMS_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SEMS_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A7E00C61952E454000C1D69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9A7E00C81952E454000C1D69 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -108,6 +116,27 @@
 			name = VC;
 			sourceTree = "<group>";
 		};
+		9A7A988D1958141900A130A8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A988A1958138C00A130A8 /* SEMS_NodeObject.h */,
+				9A7A988B1958138C00A130A8 /* SEMS_NodeObject.m */,
+				9A15AD4C1954000100A616AE /* RADataObject.h */,
+				9A15AD4D1954000100A616AE /* RADataObject.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9A7A988E19586E2F00A130A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A988F19586E9300A130A8 /* SEMS_NodeCellViewTableViewCell.h */,
+				9A7A989019586E9300A130A8 /* SEMS_NodeCellViewTableViewCell.m */,
+				9A7A989119586E9300A130A8 /* SEMS_NodeCellViewTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		9A7E00BA1952E454000C1D69 = {
 			isa = PBXGroup;
 			children = (
@@ -144,10 +173,10 @@
 		9A7E00CC1952E454000C1D69 /* SEMS_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				9A7A988E19586E2F00A130A8 /* View */,
 				9A7E00D81952E454000C1D69 /* Main.storyboard */,
 				9A15AD521954008E00A616AE /* VC */,
-				9A15AD4C1954000100A616AE /* RADataObject.h */,
-				9A15AD4D1954000100A616AE /* RADataObject.m */,
+				9A7A988D1958141900A130A8 /* Model */,
 				9A7E00DE1952E454000C1D69 /* Images.xcassets */,
 				9A7E00CD1952E454000C1D69 /* Supporting Files */,
 			);
@@ -266,6 +295,7 @@
 			files = (
 				9A7E00DF1952E454000C1D69 /* Images.xcassets in Resources */,
 				9A7E00D11952E454000C1D69 /* InfoPlist.strings in Resources */,
+				9A7A989319586E9300A130A8 /* SEMS_NodeCellViewTableViewCell.xib in Resources */,
 				9A7E00DA1952E454000C1D69 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,7 +350,9 @@
 			files = (
 				9A15AD511954007A00A616AE /* SEMS_DeviceCtrlViewController.m in Sources */,
 				9A15AD4E1954000100A616AE /* RADataObject.m in Sources */,
+				9A7A988C1958138C00A130A8 /* SEMS_NodeObject.m in Sources */,
 				9A15AD2A1953D4E700A616AE /* LoginViewController.m in Sources */,
+				9A7A989219586E9300A130A8 /* SEMS_NodeCellViewTableViewCell.m in Sources */,
 				9A7E00DD1952E454000C1D69 /* SEMSViewController.m in Sources */,
 				9A7E00D71952E454000C1D69 /* SEMSAppDelegate.m in Sources */,
 				9A7E00D31952E454000C1D69 /* main.m in Sources */,

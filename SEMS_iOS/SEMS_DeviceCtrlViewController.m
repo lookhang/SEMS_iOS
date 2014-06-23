@@ -8,7 +8,8 @@
 
 #import "SEMS_DeviceCtrlViewController.h"
 #import "RATreeView.h"
-#import "RADataObject.h"
+#import "SEMS_NodeObject.h"
+#import "SEMS_NodeCellViewTableViewCell.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -35,21 +36,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    RADataObject *commonArea = [RADataObject dataObjectWithName:@"公共办公区" children:nil];
-    RADataObject *tooneArea = [RADataObject dataObjectWithName:@"同望办公区" children:nil];
-    RADataObject *awitArea = [RADataObject dataObjectWithName:@"爱维特办公区" children:nil];
-    RADataObject *storgeArea = [RADataObject dataObjectWithName:@"仓库" children:nil];
-    RADataObject *labArea = [RADataObject dataObjectWithName:@"实验室" children:nil];
-    RADataObject *meettingArea = [RADataObject dataObjectWithName:@"会议室" children:nil];
-    RADataObject *frontArea = [RADataObject dataObjectWithName:@"前台" children:nil];
+    SEMS_NodeObject *commonArea = [SEMS_NodeObject dataObjectWithName:@"公共办公区" children:nil];
+    SEMS_NodeObject *tooneArea = [SEMS_NodeObject dataObjectWithName:@"同望办公区" children:nil];
+    
+    
+    SEMS_NodeObject *awitArea_light = [SEMS_NodeObject dataObjectWithName:@"灯" children:nil];
+    SEMS_NodeObject *awitArea = [SEMS_NodeObject dataObjectWithName:@"爱维特办公区" children:[NSArray arrayWithObjects:awitArea_light,nil]];
+    
+    SEMS_NodeObject *storgeArea = [SEMS_NodeObject dataObjectWithName:@"仓库" children:nil];
+    SEMS_NodeObject *labArea = [SEMS_NodeObject dataObjectWithName:@"实验室" children:nil];
+    SEMS_NodeObject *meettingArea = [SEMS_NodeObject dataObjectWithName:@"会议室" children:nil];
+    SEMS_NodeObject *frontArea = [SEMS_NodeObject dataObjectWithName:@"前台" children:nil];
     
     
     
-    RADataObject *awit = [RADataObject dataObjectWithName:@"武汉爱维特" children:[NSArray arrayWithObjects:commonArea,tooneArea,awitArea,storgeArea,labArea,meettingArea,frontArea,nil]];
-    RADataObject *toone = [RADataObject dataObjectWithName:@"上海同望" children:nil];
+    SEMS_NodeObject *awit = [SEMS_NodeObject dataObjectWithName:@"武汉爱维特"
+                                                             id:2
+                                                       children:[NSArray arrayWithObjects:commonArea,tooneArea,awitArea,storgeArea,labArea,meettingArea,frontArea,nil]];
+    SEMS_NodeObject *toone = [SEMS_NodeObject dataObjectWithName:@"上海同望"
+                                                              id:1
+                                                        children:nil];
     
-    RADataObject *sems = [RADataObject dataObjectWithName:@"SEMS节能管理系统"
-                                                  children:[NSArray arrayWithObjects:awit,toone,nil]];
+    SEMS_NodeObject *sems = [SEMS_NodeObject dataObjectWithName:@"SEMS节能管理系统"
+                                                             id:0
+                                                       children:[NSArray arrayWithObjects:awit,toone,nil]];
     
 
     
@@ -59,10 +69,10 @@
     
     treeView.delegate = self;
     treeView.dataSource = self;
-    treeView.separatorStyle = RATreeViewCellSeparatorStyleSingleLine;
+    treeView.separatorStyle = RATreeViewCellSeparatorStyleNone;
     
     [treeView reloadData];
-    [treeView expandRowForItem:sems withRowAnimation:RATreeViewRowAnimationLeft]; //expands Row
+    //[treeView expandRowForItem:sems withRowAnimation:RATreeViewRowAnimationLeft]; //expands Row
     [treeView setBackgroundColor:UIColorFromRGB(0xF7F7F7)];
     
     self.treeView = treeView;
@@ -133,18 +143,54 @@
         cell.backgroundColor = UIColorFromRGB(0xD1EEFC);
     } else if (treeNodeInfo.treeDepthLevel == 2) {
         cell.backgroundColor = UIColorFromRGB(0xE0F8D8);
+    }else if (treeNodeInfo.treeDepthLevel == 3) {
+        cell.backgroundColor = UIColorFromRGB(0xffF8D8);
     }
+}
+
+- (void)treeView:(RATreeView *)treeView didSelectRowForItem:(id)item treeNodeInfo:(RATreeNodeInfo *)treeNodeInfo{
+    RADataObject *selectObj=(RADataObject *)item;
+    NSLog(@"select:%@",selectObj.name);
 }
 
 #pragma mark TreeView Data Source
 
 - (UITableViewCell *)treeView:(RATreeView *)treeView cellForItem:(id)item treeNodeInfo:(RATreeNodeInfo *)treeNodeInfo
 {
-    NSInteger numberOfChildren = [treeNodeInfo.children count];
+
+    //NSInteger numberOfChildren = [treeNodeInfo.children count];
     
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"子节点 %@", [@(numberOfChildren) stringValue]];
-    cell.textLabel.text = ((RADataObject *)item).name;
+    //UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    //cell.detailTextLabel.text = [NSString stringWithFormat:@"子节点 %@", [@(numberOfChildren) stringValue]];
+    //if (treeNodeInfo.isExpanded) {
+    //    [cell.imageView setImage:[UIImage imageNamed:@"NodeTreeHeadIcon_exp"]];
+    //}else{
+    //    [cell.imageView setImage:[UIImage imageNamed:@"NodeTreeHeadIcon_unexp"]];
+    //}
+    
+    //cell.textLabel.text = ((RADataObject *)item).name;
+    
+    
+    
+    //custom cell
+    
+    static NSString *CellIdentifier = @"CustomNodeCellId";
+    
+    
+    SEMS_NodeCellViewTableViewCell *cell = (SEMS_NodeCellViewTableViewCell*)[treeView dequeueReusableCellWithIdentifier:CellIdentifier];
+    //判断是否获取到复用cell,没有则从xib中初始化一个cell
+    if (!cell) {
+        //将Custom.xib中的所有对象载入
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SEMS_NodeCellViewTableViewCell" owner:nil options:nil];
+        //第一个对象就是CustomCell了
+        cell = [nib objectAtIndex:0];
+    }
+    cell.treeNodeInfo=treeNodeInfo;
+    cell.treeView=treeView;
+    cell.item=item;
+    [cell.nodeLabelButton setTitle:((SEMS_NodeObject *)item).name forState:UIControlStateNormal];
+    
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if (treeNodeInfo.treeDepthLevel == 0) {
@@ -173,5 +219,7 @@
     
     return [data.children objectAtIndex:index];
 }
+
+
 
 @end

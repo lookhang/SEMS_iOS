@@ -15,6 +15,23 @@
 
 @implementation LoginViewController
 - (IBAction)clickLogin:(UIButton *)sender {
+    NSString * URLString=@"http://192.168.1.23:8080/SEMS/login.do";
+    
+    //NSString * URLString=@"http://m.weather.com.cn/data/101010100.html";
+
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+//    NSDictionary *parameters = @{@"username": @"admin",@"password": @"123"};
+//    [manager GET:URLString parameters:parameters
+//         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"JSON: %@", responseObject);
+//        //NSDictionary *weatherDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:&error];
+//        //NSString *weatherInfo = [weatherDic objectForKey:@"result"];
+//        //NSLog(@"result: %@", weatherInfo);
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"Error: %@", error);
+//    }];
+    
     [self performSegueWithIdentifier:@"goLogin" sender:self];
 }
 
