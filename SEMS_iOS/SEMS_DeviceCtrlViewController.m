@@ -73,7 +73,7 @@
     treeView.separatorStyle = RATreeViewCellSeparatorStyleNone;
     
     [treeView reloadData];
-    //[treeView expandRowForItem:sems withRowAnimation:RATreeViewRowAnimationLeft]; //expands Row
+    [treeView expandRowForItem:sems withRowAnimation:RATreeViewRowAnimationTop]; //expands Row
     [treeView setBackgroundColor:UIColorFromRGB(0xF7F7F7)];
     
     self.treeView = treeView;
@@ -242,7 +242,7 @@
     for (SEMS_NodeCellViewTableViewCell *cell in [self.treeView visibleCells]){
         
         if (cell.nodeHeadIconButton.tag==sender.tag) {
-            NSLog(@"click head button %@",((SEMS_NodeObject *)cell.item).name);
+            //NSLog(@"click head button %@",((SEMS_NodeObject *)cell.item).name);
             if (cell.treeNodeInfo.isExpanded) {
                 
                 [cell.treeView collapseRowForItem:cell.item withRowAnimation:RATreeViewRowAnimationTop];
@@ -265,7 +265,7 @@
     for (SEMS_NodeCellViewTableViewCell *cell in [self.treeView visibleCells]){
         
         if (cell.nodeLabelButton.tag==sender.tag) {
-            SEMS_NodeObject* node=(SEMS_NodeObject *)cell.item;
+            //SEMS_NodeObject* node=(SEMS_NodeObject *)cell.item;
             //NSLog(@"Click: %d-%@",node.id,node.name);
             [self performSegueWithIdentifier:@"goDeviceStatusView" sender:sender];
 
