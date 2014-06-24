@@ -29,6 +29,7 @@
 		9A7E00E81952E454000C1D69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7E00CA1952E454000C1D69 /* UIKit.framework */; };
 		9A7E00F01952E454000C1D69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A7E00EE1952E454000C1D69 /* InfoPlist.strings */; };
 		9A7E00F21952E454000C1D69 /* SEMS_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E00F11952E454000C1D69 /* SEMS_iOSTests.m */; };
+		9ABF9FF11959614800A85982 /* SEMS_DeviceStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF9FF01959614800A85982 /* SEMS_DeviceStatusViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		9A7E00ED1952E454000C1D69 /* SEMS_iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SEMS_iOSTests-Info.plist"; sourceTree = "<group>"; };
 		9A7E00EF1952E454000C1D69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9A7E00F11952E454000C1D69 /* SEMS_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEMS_iOSTests.m; sourceTree = "<group>"; };
+		9ABF9FEF1959614800A85982 /* SEMS_DeviceStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEMS_DeviceStatusViewController.h; sourceTree = "<group>"; };
+		9ABF9FF01959614800A85982 /* SEMS_DeviceStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEMS_DeviceStatusViewController.m; sourceTree = "<group>"; };
 		B7BF13AB48BE40119456E0D1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F3490AFC02EF46118090330A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -103,7 +106,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A15AD521954008E00A616AE /* VC */ = {
+		9A15AD521954008E00A616AE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				9A15AD4F1954007A00A616AE /* SEMS_DeviceCtrlViewController.h */,
@@ -112,8 +115,10 @@
 				9A15AD291953D4E700A616AE /* LoginViewController.m */,
 				9A7E00DB1952E454000C1D69 /* SEMSViewController.h */,
 				9A7E00DC1952E454000C1D69 /* SEMSViewController.m */,
+				9ABF9FEF1959614800A85982 /* SEMS_DeviceStatusViewController.h */,
+				9ABF9FF01959614800A85982 /* SEMS_DeviceStatusViewController.m */,
 			);
-			name = VC;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		9A7A988D1958141900A130A8 /* Model */ = {
@@ -175,7 +180,7 @@
 			children = (
 				9A7A988E19586E2F00A130A8 /* View */,
 				9A7E00D81952E454000C1D69 /* Main.storyboard */,
-				9A15AD521954008E00A616AE /* VC */,
+				9A15AD521954008E00A616AE /* Controller */,
 				9A7A988D1958141900A130A8 /* Model */,
 				9A7E00DE1952E454000C1D69 /* Images.xcassets */,
 				9A7E00CD1952E454000C1D69 /* Supporting Files */,
@@ -348,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ABF9FF11959614800A85982 /* SEMS_DeviceStatusViewController.m in Sources */,
 				9A15AD511954007A00A616AE /* SEMS_DeviceCtrlViewController.m in Sources */,
 				9A15AD4E1954000100A616AE /* RADataObject.m in Sources */,
 				9A7A988C1958138C00A130A8 /* SEMS_NodeObject.m in Sources */,

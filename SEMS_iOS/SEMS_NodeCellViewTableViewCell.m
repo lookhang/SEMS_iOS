@@ -17,7 +17,6 @@
 {
     [super awakeFromNib];
     // Initialization code
-    
     [self.nodeHeadIconButton setBackgroundImage:[UIImage imageNamed:@"NodeTreeHeadIcon_unexp"]
                                        forState:UIControlStateNormal];
     self.nodeLabelButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;//设置按钮文字左对齐
@@ -33,21 +32,6 @@
 
 
 
-- (IBAction)ClickNodeHeadIcon:(UIButton *)sender {
-    if (self.treeNodeInfo.isExpanded) {
-        [self.nodeHeadIconButton setBackgroundImage:[UIImage imageNamed:@"NodeTreeHeadIcon_unexp"]
-                                           forState:UIControlStateNormal];
-        [self.treeView collapseRowForItem:self.item withRowAnimation:RATreeViewRowAnimationTop];
-    }else{
-        [self.nodeHeadIconButton setBackgroundImage:[UIImage imageNamed:@"NodeTreeHeadIcon_exp"]
-                                           forState:UIControlStateNormal];
-        [self.treeView expandRowForItem:self.item withRowAnimation:RATreeViewRowAnimationTop];
-    }
-    
-}
 
-- (IBAction)clickLabelButton:(UIButton *)sender {
-    SEMS_NodeObject* node=(SEMS_NodeObject *)self.item;
-    NSLog(@"Click: %d-%@",node.id,node.name);
-}
+
 @end

@@ -17,11 +17,33 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="设备控制" image="SEMS_DevCtrl_TabICON" id="7rh-dh-rms"/>
+                    <navigationItem key="navigationItem" title="设备控制" id="EjG-bg-C2O"/>
+                    <connections>
+                        <segue destination="L74-0m-Rmc" kind="push" identifier="goDeviceStatusView" id="efD-wW-I3M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439" y="-10"/>
+            <point key="canvasLocation" x="965" y="-10"/>
+        </scene>
+        <!--Device Status View Controller-->
+        <scene sceneID="KBH-Wa-92U">
+            <objects>
+                <viewController id="L74-0m-Rmc" customClass="SEMS_DeviceStatusViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4QO-Gb-yy3"/>
+                        <viewControllerLayoutGuide type="bottom" id="iyH-Ot-On7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dVR-Oc-KeE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0dW-Zw-JNs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kex-iS-Xq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481" y="-16"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ARu-gz-Fb0">
@@ -35,7 +57,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="BfR-3o-8qb"/>
+                        <segue destination="EyU-Z3-rcG" kind="relationship" relationship="viewControllers" id="BfR-3o-8qb"/>
                         <segue destination="tQG-GG-8lz" kind="relationship" relationship="viewControllers" id="ezv-Za-EDb"/>
                         <segue destination="OlV-pi-KEM" kind="relationship" relationship="viewControllers" id="Iez-Xn-xEo"/>
                         <segue destination="x43-3t-j7G" kind="relationship" relationship="viewControllers" id="32w-Hg-9DU"/>
@@ -126,7 +148,7 @@
                                 <rect key="frame" x="20" y="113" width="280" height="400"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">       爱维特团队组建于2006年，由清华学子创建，目前已成为中国领先的移动定位综合服务提供商，专业从事无线通讯终端产品的开发和销售。作为清华大学在无线通讯领域优势注资的高新技术企业，在通信网络设备制造及移动多媒体应用开发等领域的实力已处于国内领先水平。爱维特专注于移动通信相关产品的研发与制造,以爱维特为品牌致力于向全世界的用户提供品质优异、安全可靠的移动通讯终端、数据传输终端及相关多媒体、 娱乐、定位应用产品的解决方案。        爱维特的主要发起人及核心成员来自于清华大学、同济大学、上海交大等名校，大多是海外归来、有海外工作经验和跨国公司工作经验的具有高学历的技术精英，其中不乏拥有国际专利的外籍人士，具有多年的行业经验，对国内外通讯市场的新风向具有敏锐的洞察力,正确的判断力和强大的市场开拓力。 </mutableString>
+                                <mutableString key="text">SEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMS定位应用产品的解决方案EMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMSEMS。 </mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -163,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioq-a0-QIC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1147" y="981"/>
+            <point key="canvasLocation" x="1029" y="1259"/>
         </scene>
         <!--View Controller - 情景模式-->
         <scene sceneID="7aN-n5-juN">
@@ -182,7 +204,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVA-r5-JgU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="799" y="415"/>
+            <point key="canvasLocation" x="1459" y="759"/>
+        </scene>
+        <!--Navigation Controller - 设备控制-->
+        <scene sceneID="2fN-gX-TuK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EyU-Z3-rcG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="设备控制" image="SEMS_DevCtrl_TabICON" id="7rh-dh-rms"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cuj-D1-xGn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="xlS-m5-iU3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rmz-mI-Nht" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="439" y="-10"/>
         </scene>
     </scenes>
     <resources>

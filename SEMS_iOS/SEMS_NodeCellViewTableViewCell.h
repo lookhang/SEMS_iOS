@@ -20,7 +20,5 @@
 @property(nonatomic,strong) RATreeNodeInfo *treeNodeInfo;
 @property (nonatomic,strong) id item;
 @property (nonatomic,strong) RATreeView * treeView;
-- (IBAction)ClickNodeHeadIcon:(UIButton *)sender;
-- (IBAction)clickLabelButton:(UIButton *)sender;
 
 @end
