@@ -10,29 +10,52 @@
 #import "AFNetworking.h"
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *userNameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *passwordLabel;
 
 @end
 
 @implementation LoginViewController
 - (IBAction)clickLogin:(UIButton *)sender {
-    NSString * URLString=@"http://192.168.1.23:8080/SEMS/login.do";
     
-    //NSString * URLString=@"http://m.weather.com.cn/data/101010100.html";
+    NSString *operationString=@"login";
+    NSString * URLString=@"http://192.168.1.23:8080/SEMS/login";
+    //NSString * URLString=@"http://192.168.1.23:8080/SEMS/login.do";
 
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-//    NSDictionary *parameters = @{@"username": @"admin",@"password": @"123"};
-//    [manager GET:URLString parameters:parameters
-//         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"JSON: %@", responseObject);
-//        //NSDictionary *weatherDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:&error];
-//        //NSString *weatherInfo = [weatherDic objectForKey:@"result"];
-//        //NSLog(@"result: %@", weatherInfo);
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"Error: %@", error);
-//    }];
+    NSDictionary *parameters = @{@"userName": self.userNameLabel.text,@"password": self.passwordLabel.text,@"operation":operationString};
     
-    [self performSegueWithIdentifier:@"goLogin" sender:self];
+    //NSLog(@"parameters: %@",parameters);
+
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer=[AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    //manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager POST:URLString parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             //NSLog(@"JSON: %@", operation.responseString);
+             //NSLog(@"JSON: %@", responseObject);
+              NSString *requestTmp = [NSString stringWithString:operation.responseString];
+              NSData *resData = [[NSData alloc] initWithData:[requestTmp dataUsingEncoding:NSUTF8StringEncoding]];
+              //系统自带JSON解析
+              NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:resData options:NSJSONReadingMutableLeaves error:nil];
+              if ([@"1" isEqualToString:[resultDic objectForKey:@"result"]] && [operationString isEqualToString:[resultDic objectForKey:@"operation"]]) {
+                  [self performSegueWithIdentifier:@"goLogin" sender:self];
+              }else{
+                  [self showMsg:[resultDic objectForKey:@"msg"]];
+              }
+              NSLog(@"result: %@：%@", [resultDic objectForKey:@"result"],[resultDic objectForKey:@"msg"]);
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", operation.responseString);
+        NSLog(@"Error: %@", error);
+    }];
+    
+    
+}
+- (IBAction)backgroundTap:(UIControl *)sender {
+    [self.userNameLabel resignFirstResponder];
+    [self.passwordLabel resignFirstResponder];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -66,5 +89,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)showMsg:(NSString *)msg{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
+                                                    message:msg
+                                                   delegate:self
+                                          cancelButtonTitle:@"关闭"
+                                          otherButtonTitles:nil,nil];
+    [alert show];
+}
 
 @end

@@ -57,15 +57,16 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="lAX-Er-bwF" kind="relationship" relationship="viewControllers" id="kcu-b1-lEK"/>
                         <segue destination="EyU-Z3-rcG" kind="relationship" relationship="viewControllers" id="BfR-3o-8qb"/>
-                        <segue destination="tQG-GG-8lz" kind="relationship" relationship="viewControllers" id="ezv-Za-EDb"/>
+                        <segue destination="cLn-sI-THW" kind="relationship" relationship="viewControllers" id="ezv-Za-EDb"/>
                         <segue destination="OlV-pi-KEM" kind="relationship" relationship="viewControllers" id="Iez-Xn-xEo"/>
                         <segue destination="x43-3t-j7G" kind="relationship" relationship="viewControllers" id="32w-Hg-9DU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BqK-Y5-DXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34" y="505"/>
+            <point key="canvasLocation" x="-56" y="743"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="NzM-4I-sUJ">
@@ -75,21 +76,27 @@
                         <viewControllerLayoutGuide type="top" id="hRA-VW-wzC"/>
                         <viewControllerLayoutGuide type="bottom" id="fyc-O4-BYF"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="J5v-Gl-eE4">
+                    <view key="view" contentMode="scaleToFill" id="J5v-Gl-eE4" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xZi-2H-buw">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin" borderStyle="roundedRect" placeholder="用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xZi-2H-buw">
                                 <rect key="frame" x="56" y="211" width="208" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="backgroundTap:" destination="poL-DG-Mxp" eventType="editingDidEndOnExit" id="64P-2g-DMV"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="10q-pY-kPT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="10q-pY-kPT">
                                 <rect key="frame" x="56" y="249" width="208" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="backgroundTap:" destination="poL-DG-Mxp" eventType="editingDidEndOnExit" id="gTj-Vf-WmT"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8A-O2-CNe">
                                 <rect key="frame" x="56" y="326" width="208" height="30"/>
@@ -123,8 +130,13 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="backgroundTap:" destination="poL-DG-Mxp" eventType="touchDown" id="efo-l7-deN"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="passwordLabel" destination="10q-pY-kPT" id="zcD-cg-YI3"/>
+                        <outlet property="userNameLabel" destination="xZi-2H-buw" id="NHN-9W-8ud"/>
                         <segue destination="QZY-85-dFg" kind="modal" identifier="goLogin" id="lBF-Y6-VRa"/>
                     </connections>
                 </viewController>
@@ -166,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yAf-gB-ite" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439" y="1089"/>
+            <point key="canvasLocation" x="375" y="1373"/>
         </scene>
         <!--View Controller - 系统设置-->
         <scene sceneID="9XV-Va-ENa">
@@ -187,7 +199,7 @@
             </objects>
             <point key="canvasLocation" x="1029" y="1259"/>
         </scene>
-        <!--View Controller - 情景模式-->
+        <!--View Controller-->
         <scene sceneID="7aN-n5-juN">
             <objects>
                 <viewController id="tQG-GG-8lz" sceneMemberID="viewController">
@@ -200,11 +212,49 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="情景模式" image="SEMS_SceneMode_TabICON" id="Teh-vb-sAs"/>
+                    <navigationItem key="navigationItem" id="ZOL-Zb-6MQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVA-r5-JgU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1459" y="759"/>
+            <point key="canvasLocation" x="1985" y="759"/>
+        </scene>
+        <!--Home View Controller - 首页-->
+        <scene sceneID="7vp-M2-vg8">
+            <objects>
+                <viewController id="lAX-Er-bwF" customClass="SEMS_HomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7my-am-v5H"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z8v-nh-uhB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nI3-sd-y3i">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="欢迎来到SEMS系统！" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bE-pG-FqB">
+                                <rect key="frame" x="77" y="69" width="167" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVo-dE-d4C">
+                                <rect key="frame" x="130" y="443" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="注销登录">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="lAX-Er-bwF" eventType="touchUpInside" id="1iE-NW-wM8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="首页" image="SEMS_Home_TabICON" id="aMX-h0-vh6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bzz-yJ-8ii" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-34" y="-2"/>
         </scene>
         <!--Navigation Controller - 设备控制-->
         <scene sceneID="2fN-gX-TuK">
@@ -225,10 +275,30 @@
             </objects>
             <point key="canvasLocation" x="439" y="-10"/>
         </scene>
+        <!--Navigation Controller - 情景模式-->
+        <scene sceneID="eUS-FZ-6iY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cLn-sI-THW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="情景模式" image="SEMS_SceneMode_TabICON" id="Teh-vb-sAs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eFQ-Gd-jWV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tQG-GG-8lz" kind="relationship" relationship="rootViewController" id="o0f-iD-sLg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1SH-7Z-8Qh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1459" y="759"/>
+        </scene>
     </scenes>
     <resources>
         <image name="SEMS_AboutUs_TabICON" width="35" height="35"/>
         <image name="SEMS_DevCtrl_TabICON" width="35" height="35"/>
+        <image name="SEMS_Home_TabICON" width="35" height="35"/>
         <image name="SEMS_SceneMode_TabICON" width="35" height="35"/>
         <image name="SEMS_Setup_TabICON" width="35" height="35"/>
     </resources>

@@ -29,6 +29,7 @@
 		9A7E00E81952E454000C1D69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7E00CA1952E454000C1D69 /* UIKit.framework */; };
 		9A7E00F01952E454000C1D69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A7E00EE1952E454000C1D69 /* InfoPlist.strings */; };
 		9A7E00F21952E454000C1D69 /* SEMS_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E00F11952E454000C1D69 /* SEMS_iOSTests.m */; };
+		9ABDA13F195AAF4600FF418C /* SEMS_HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDA13E195AAF4600FF418C /* SEMS_HomeViewController.m */; };
 		9ABF9FF11959614800A85982 /* SEMS_DeviceStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF9FF01959614800A85982 /* SEMS_DeviceStatusViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,8 @@
 		9A7E00ED1952E454000C1D69 /* SEMS_iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SEMS_iOSTests-Info.plist"; sourceTree = "<group>"; };
 		9A7E00EF1952E454000C1D69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9A7E00F11952E454000C1D69 /* SEMS_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEMS_iOSTests.m; sourceTree = "<group>"; };
+		9ABDA13D195AAF4600FF418C /* SEMS_HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEMS_HomeViewController.h; sourceTree = "<group>"; };
+		9ABDA13E195AAF4600FF418C /* SEMS_HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEMS_HomeViewController.m; sourceTree = "<group>"; };
 		9ABF9FEF1959614800A85982 /* SEMS_DeviceStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEMS_DeviceStatusViewController.h; sourceTree = "<group>"; };
 		9ABF9FF01959614800A85982 /* SEMS_DeviceStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEMS_DeviceStatusViewController.m; sourceTree = "<group>"; };
 		B7BF13AB48BE40119456E0D1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				9A7E00DC1952E454000C1D69 /* SEMSViewController.m */,
 				9ABF9FEF1959614800A85982 /* SEMS_DeviceStatusViewController.h */,
 				9ABF9FF01959614800A85982 /* SEMS_DeviceStatusViewController.m */,
+				9ABDA13D195AAF4600FF418C /* SEMS_HomeViewController.h */,
+				9ABDA13E195AAF4600FF418C /* SEMS_HomeViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -269,6 +274,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Fantasy;
 				TargetAttributes = {
+					9A7E00C21952E454000C1D69 = {
+						DevelopmentTeam = GQMJ5SPMQ6;
+					};
 					9A7E00E31952E454000C1D69 = {
 						TestTargetID = 9A7E00C21952E454000C1D69;
 					};
@@ -362,6 +370,7 @@
 				9A7E00DD1952E454000C1D69 /* SEMSViewController.m in Sources */,
 				9A7E00D71952E454000C1D69 /* SEMSAppDelegate.m in Sources */,
 				9A7E00D31952E454000C1D69 /* main.m in Sources */,
+				9ABDA13F195AAF4600FF418C /* SEMS_HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,9 +496,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SEMS_iOS/SEMS_iOS-Prefix.pch";
 				INFOPLIST_FILE = "SEMS_iOS/SEMS_iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -501,9 +512,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SEMS_iOS/SEMS_iOS-Prefix.pch";
 				INFOPLIST_FILE = "SEMS_iOS/SEMS_iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
