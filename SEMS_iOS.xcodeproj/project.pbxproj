@@ -30,6 +30,8 @@
 		9A7E00F01952E454000C1D69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A7E00EE1952E454000C1D69 /* InfoPlist.strings */; };
 		9A7E00F21952E454000C1D69 /* SEMS_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E00F11952E454000C1D69 /* SEMS_iOSTests.m */; };
 		9ABDA13F195AAF4600FF418C /* SEMS_HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDA13E195AAF4600FF418C /* SEMS_HomeViewController.m */; };
+		9ABDA143195B091900FF418C /* SEMS_Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDA142195B091900FF418C /* SEMS_Util.m */; };
+		9ABDA146195BEE3500FF418C /* SEMS_Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDA145195BEE3500FF418C /* SEMS_Common.m */; };
 		9ABF9FF11959614800A85982 /* SEMS_DeviceStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF9FF01959614800A85982 /* SEMS_DeviceStatusViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,10 @@
 		9A7E00F11952E454000C1D69 /* SEMS_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEMS_iOSTests.m; sourceTree = "<group>"; };
 		9ABDA13D195AAF4600FF418C /* SEMS_HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEMS_HomeViewController.h; sourceTree = "<group>"; };
 		9ABDA13E195AAF4600FF418C /* SEMS_HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEMS_HomeViewController.m; sourceTree = "<group>"; };
+		9ABDA141195B091900FF418C /* SEMS_Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEMS_Util.h; sourceTree = "<group>"; };
+		9ABDA142195B091900FF418C /* SEMS_Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEMS_Util.m; sourceTree = "<group>"; };
+		9ABDA144195BEE3500FF418C /* SEMS_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEMS_Common.h; sourceTree = "<group>"; };
+		9ABDA145195BEE3500FF418C /* SEMS_Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEMS_Common.m; sourceTree = "<group>"; };
 		9ABF9FEF1959614800A85982 /* SEMS_DeviceStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEMS_DeviceStatusViewController.h; sourceTree = "<group>"; };
 		9ABF9FF01959614800A85982 /* SEMS_DeviceStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEMS_DeviceStatusViewController.m; sourceTree = "<group>"; };
 		B7BF13AB48BE40119456E0D1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -183,8 +189,9 @@
 		9A7E00CC1952E454000C1D69 /* SEMS_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				9A7A988E19586E2F00A130A8 /* View */,
+				9ABDA140195B08E100FF418C /* Other */,
 				9A7E00D81952E454000C1D69 /* Main.storyboard */,
+				9A7A988E19586E2F00A130A8 /* View */,
 				9A15AD521954008E00A616AE /* Controller */,
 				9A7A988D1958141900A130A8 /* Model */,
 				9A7E00DE1952E454000C1D69 /* Images.xcassets */,
@@ -222,6 +229,17 @@
 				9A7E00EE1952E454000C1D69 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9ABDA140195B08E100FF418C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				9ABDA144195BEE3500FF418C /* SEMS_Common.h */,
+				9ABDA145195BEE3500FF418C /* SEMS_Common.m */,
+				9ABDA141195B091900FF418C /* SEMS_Util.h */,
+				9ABDA142195B091900FF418C /* SEMS_Util.m */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,9 +379,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ABDA143195B091900FF418C /* SEMS_Util.m in Sources */,
 				9ABF9FF11959614800A85982 /* SEMS_DeviceStatusViewController.m in Sources */,
 				9A15AD511954007A00A616AE /* SEMS_DeviceCtrlViewController.m in Sources */,
 				9A15AD4E1954000100A616AE /* RADataObject.m in Sources */,
+				9ABDA146195BEE3500FF418C /* SEMS_Common.m in Sources */,
 				9A7A988C1958138C00A130A8 /* SEMS_NodeObject.m in Sources */,
 				9A15AD2A1953D4E700A616AE /* LoginViewController.m in Sources */,
 				9A7A989219586E9300A130A8 /* SEMS_NodeCellViewTableViewCell.m in Sources */,

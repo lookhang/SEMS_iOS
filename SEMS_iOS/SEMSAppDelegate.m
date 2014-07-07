@@ -7,12 +7,17 @@
 //
 
 #import "SEMSAppDelegate.h"
+#import "DDLog.h"
+#import "DDTTYLogger.h"
 
 @implementation SEMSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //Init the ddlog
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
      [NSThread sleepForTimeInterval:2.0];
     return YES;
 }
